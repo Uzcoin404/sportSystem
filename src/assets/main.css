@@ -1,4 +1,47 @@
-@import './base.css';
+@import "./base.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.login_title {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.login_main {
+  max-width: 660px;
+  margin: auto;
+}
+.reg_main{
+  max-width: 880px;
+  margin: auto;
+}
+
+.login_button {
+  display: flex;
+  align-items: center;
+  background-color: #01c151;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 700;
+  height: 70px;
+  padding: 0 36px;
+}
+
+.login_input {
+  height: 70px;
+  border-radius: 35px;
+  padding: 0 30px;
+  font-size: 23px;
+  font-weight: 700;
+  border: 1px solid #000;
+  margin-right: 10px;
+}
+
+.login_input::placeholder {
+  color: rgba(189, 189, 189, 1);
+}
+
+.reg_link {
+  color: #01c151;
+}

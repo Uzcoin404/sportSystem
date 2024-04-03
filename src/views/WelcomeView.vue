@@ -11,7 +11,7 @@ import Logo from '@/components/icons/Logo.vue';
       <Logo class="mx-auto mb-16"></Logo>
       <div class="flex justify-center gap-4">
         <div class="flag cursor-pointer" v-for="item in languages" :key="item.text">
-          <Flag :image=item.image>
+          <Flag :link="item.code + '/login'" :image=item.image>
             {{ item.text }}
           </Flag>
         </div>

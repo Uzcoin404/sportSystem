@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "libphonenumber-js": "^1.10.59",
+    "swiper": "^11.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

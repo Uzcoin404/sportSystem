@@ -54,11 +54,22 @@ body {
   -moz-osx-font-smoothing: grayscale; */
 }
 #app {
+  position: relative;
   height: 100vh;
-  padding: 21px 71px 96px 33px;
+  max-width: 1623px;
+  margin: auto;
+  /* padding: 21px 71px 96px 33px; */
   background: url('../assets/bg.svg') no-repeat center / contain;
   /* background-position: 30px 21px; */
+  overflow: hidden;
+  mask-image: url('./bg.svg'); /* Standard */
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
-.bg {
-  width: 100%;
+main{
+  /* -webkit-clip-path: url(#bg_shape);
+  clip-path: url(#bg_shape);
+  overflow: hidden; */
 }

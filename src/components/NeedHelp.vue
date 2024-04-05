@@ -26,6 +26,9 @@ defineProps({
 
 <style scoped>
 .need_help{
+  position: absolute;
+  bottom: 8%;
+  padding-left: 3%;
   font-size: 17px;
   font-weight: 500;
 }

@@ -62,14 +62,17 @@ body {
   background: url('../assets/bg.svg') no-repeat center / contain;
   /* background-position: 30px 21px; */
   overflow: hidden;
-  mask-image: url('./bg.svg'); /* Standard */
+  /* mask-image: url('./bg.svg');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  mask-position: center;
+  mask-position: center; */
 }
 main{
   /* -webkit-clip-path: url(#bg_shape);
   clip-path: url(#bg_shape);
   overflow: hidden; */
+}
+.poppins{
+  font-family: "Poppins";
 }

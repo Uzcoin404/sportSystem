@@ -35,7 +35,8 @@ function handleChange() {
   background-position: calc(100% - 25px) center;
   background-color: #fff;
   max-width: 210px;
-  width: 100%;
+  width: 210px;
+  /* width: 100%; */
   text-indent: 40px;
   padding-right: 44px;
 }

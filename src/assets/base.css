@@ -45,6 +45,9 @@
 
 body {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--color-background);
   font-family: "Inter", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
@@ -56,23 +59,21 @@ body {
 #app {
   position: relative;
   height: 100vh;
+  width: 100%;
   max-width: 1623px;
-  margin: auto;
-  /* padding: 21px 71px 96px 33px; */
-  background: url('../assets/bg.svg') no-repeat center / contain;
-  /* background-position: 30px 21px; */
-  overflow: hidden;
-  /* mask-image: url('./bg.svg');
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center; */
+  max-height: 1000px;
 }
 main{
-  /* -webkit-clip-path: url(#bg_shape);
+  position: relative;
+  height: 100%;
+  -webkit-clip-path: url(#bg_shape);
   clip-path: url(#bg_shape);
-  overflow: hidden; */
 }
 .poppins{
   font-family: "Poppins";
+}
+.content{
+  height: 100%;
+  /* position: relative; */
+  /* z-index: 1; */
 }

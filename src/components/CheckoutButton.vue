@@ -1,5 +1,7 @@
 <script setup>
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 defineProps({
   name: String,
 })
@@ -7,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-  <button type="submit" class="checkout_button relative text-white">
+  <button type="submit" class="checkout_button relative text-white" @click="router.push('checkout')">
     <div class="flex justify-start absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div>
         <p class="poppins text-left -mb-1">ÖDƏNİŞ</p>
@@ -37,7 +39,10 @@ defineProps({
 
 <style scoped>
 .checkout_button {
-
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 360px;
   .arrow {
     transition: .3s;
   }

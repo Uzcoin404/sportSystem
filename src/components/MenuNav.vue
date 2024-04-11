@@ -1,33 +1,26 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { ref } from 'vue';
 import MenuShapeVue from './icons/MenuShape.vue';
 const menuList = [
-  {
-    text: 'Yeni başlayan',
-    link: "#"
-  },
-  {
-    text: 'Orta',
-    link: "male"
-  },
-  {
-    text: 'Peşəkar',
-    link: "abc"
-  }
+  'Yeni başlayan',
+  'Orta',
+  'Peşəkar'
 ]
+const suitType = ref(menuList[0]);
 
 </script>
 
 <template>
-  <div>
+  <div class="absolute left-1/2 -translate-x-1/2 -top-8">
     <div class="pt-7">
       <div class="relative w-max mx-auto">
         <div class="absolute top-0 left-0 w-full h-full">
           <div class="flex justify-center items-center text-white">
-            <template v-for="(item, index) in menuList" :key="item.text">
-              <RouterLink :to="item.link" id="menuLink" class="pt-12 pb-7 text-xl font-bold" active-class="active">
-                {{ item.text }}
-              </RouterLink>
+            <template v-for="(item, index) in menuList" :key="item">
+              <button id="menuItem" :class="{ 'pt-12 pb-7 text-xl font-bold': true, 'active': suitType == item }"
+                @click="suitType = item">
+                {{ item }}
+              </button>
               <div class="menu_col" v-show="index != menuList.length - 1"></div>
             </template>
           </div>
@@ -47,11 +40,11 @@ const menuList = [
   margin: 25px 80px 9px;
 }
 
-#menuLink.active {
+#menuItem.active {
   color: #fff;
 }
 
-#menuLink {
+#menuItem {
   color: rgba(255, 255, 255, 0.4);
 }
 

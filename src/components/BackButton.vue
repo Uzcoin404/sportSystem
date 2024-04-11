@@ -23,8 +23,8 @@ defineProps({
 <style>
 .back_button {
   position: absolute;
-  top: 25px;
-  left: 55px;
+  top: 0;
+  left: 20px;
   display: flex;
   align-items: center;
   color: #fff;

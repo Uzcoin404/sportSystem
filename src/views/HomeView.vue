@@ -2,11 +2,13 @@
 import MenuNav from '@/components/MenuNav.vue';
 import Select from "@/components/Select.vue";
 import TotalSection from "@/components/TotalSection.vue"
+import ProductSlider from "@/components/ProductSlider.vue"
+import CheckoutButton from '@/components/CheckoutButton.vue';
 </script>
 
 <template>
-  <main class="flex justify-between p-24">
-    <div class="flex-auto">
+  <main class="flex justify-between">
+    <div class="ml-20 pt-32">
       <h3 class="text-2xl font-bold pl-5">Şəxsi məlumat</h3>
       <Select name="weight" label="Çəki">
         <option value="200">200 KG</option>
@@ -110,11 +112,12 @@ import TotalSection from "@/components/TotalSection.vue"
       </Select>
     </div>
 
-    <MenuNav />
-
+    <ProductSlider />
     <TotalSection />
-    <!-- <img src="../../public/main.jpg" alt="" class="main_img"> -->
+    
   </main>
+  <CheckoutButton />
+  <MenuNav class="flex-auto" />
 </template>
 
 <style scoped>

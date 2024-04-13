@@ -6,7 +6,7 @@ import Logo from '@/components/icons/Logo.vue';
 </script>
 
 <template>
-  <main class="h-full flex justify-center items-center">
+  <main id="main" class="h-full flex justify-center items-center">
     <div>
       <Logo class="mx-auto mb-16"></Logo>
       <div class="flex justify-center gap-4">

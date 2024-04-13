@@ -44,3 +44,9 @@
 .reg_link {
   color: #01c151;
 }
+
+@media (max-height: 800px){
+  .total_sections{
+    
+  }
+}

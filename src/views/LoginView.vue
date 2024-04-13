@@ -23,37 +23,39 @@ function submitPhoneNumber() {
 </script>
 
 <template>
-  <main class="login_main h-full flex justify-center items-center">
-    <div>
-      <h2 class="login_title mb-12">SportSystem-ə xoş qəlmiziniz!</h2>
-      <p class="text-2xl font-medium mb-6">
-        Şəxsiyyətinizi təstiq etmək üçün
-        aşağıda olan xanalardan birini doldurmanızı
-        xahiş edirik
-      </p>
-      <form action="#" @submit.prevent="submitPhoneNumber">
-        <label for="phone" class="mb-1 ml-2.5">Telefon nömrəni</label>
-        <div class="flex mb-2">
-          <input type="text" class="login_input" v-model="phoneNumber" placeholder="+994 (00) 000 0000" required>
-          <button class="login_button text-2xl">
-            <Check v-show="status.success" class="mr-4" />
-            Yoxla
-          </button>
-        </div>
-      </form>
-      <form action="#">
-        <label for="phone" class="mb-1 ml-2.5">E-unvan</label>
-        <div class="flex">
-          <input type="text" class="login_input" placeholder="name@domain.xyz" required>
-          <button class="login_button text-2xl">Yoxla</button>
-        </div>
-      </form>
-      <p class="text-2xl font-medium mt-7">Hesabiniz yoxdur?
-        <RouterLink to="register" class="font-bold reg_link">Qeydiyyatdan</RouterLink>
-        keçin!
-      </p>
-    </div>
-  </main>
+  <div id="main">
+    <main class="login_main h-full flex justify-center items-center">
+      <div>
+        <h2 class="login_title mb-12">SportSystem-ə xoş qəlmiziniz!</h2>
+        <p class="text-2xl font-medium mb-6">
+          Şəxsiyyətinizi təstiq etmək üçün
+          aşağıda olan xanalardan birini doldurmanızı
+          xahiş edirik
+        </p>
+        <form action="#" @submit.prevent="submitPhoneNumber">
+          <label for="phone" class="mb-1 ml-2.5">Telefon nömrəni</label>
+          <div class="flex mb-2">
+            <input type="text" class="login_input" v-model="phoneNumber" placeholder="+994 (00) 000 0000" required>
+            <button class="login_button text-2xl">
+              <Check v-show="status.success" class="mr-4" />
+              Yoxla
+            </button>
+          </div>
+        </form>
+        <form action="#">
+          <label for="phone" class="mb-1 ml-2.5">E-unvan</label>
+          <div class="flex">
+            <input type="text" class="login_input" placeholder="name@domain.xyz" required>
+            <button class="login_button text-2xl">Yoxla</button>
+          </div>
+        </form>
+        <p class="text-2xl font-medium mt-7">Hesabiniz yoxdur?
+          <RouterLink to="register" class="font-bold reg_link">Qeydiyyatdan</RouterLink>
+          keçin!
+        </p>
+      </div>
+    </main>
+  </div>
 </template>
 
 <style></style>

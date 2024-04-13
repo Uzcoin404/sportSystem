@@ -68,4 +68,13 @@ import DatePicker from './DatePicker.vue';
   background-color: rgba(34, 34, 34, 0.05);
   border-radius: 5px;
 }
+
+@media (max-height: 900px) {
+  .total_title{
+    font-size: 24px;
+  }
+  .checkbox{
+    width: 20px;
+  }
+}
 </style>

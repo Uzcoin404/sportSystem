@@ -15,16 +15,16 @@ import 'swiper/css/effect-fade';
     prevEl: '.swiper-button-prev'
   }" :slides-per-view="1" effect="fade" class="product_slider">
     <SwiperSlide>
-      <img src="/img/Screenshot 2024-03-10 at 09.50 1.jpg" alt="" class="main_img">
+      <img src="/img/Screenshot 2024-03-10 at 09.50 1.jpg" alt="" class="product_slider_img">
     </SwiperSlide>
     <SwiperSlide>
-      <img src="/img/image-from-rawpixel-id-14386361-jpeg 1.jpg" alt="">
+      <img src="/img/image-from-rawpixel-id-14386361-jpeg 1.jpg" alt="" class="product_slider_img">
     </SwiperSlide>
     <SwiperSlide>
-      <img src="/img/Mask group.jpg" alt="">
+      <img src="/img/Mask group.jpg" alt="" class="product_slider_img">
     </SwiperSlide>
     <SwiperSlide>
-      <img src="/img/Screen Shot 2024-03-09 at 3.58 1 (2).jpg" alt="">
+      <img src="/img/Screen Shot 2024-03-09 at 3.58 1 (2).jpg" alt="" class="product_slider_img">
     </SwiperSlide>
   </Swiper>
   <div class="swiper-button-prev">
@@ -78,5 +78,11 @@ import 'swiper/css/effect-fade';
 
 .swiper-button-next {
   right: 445px;
+}
+
+@media (max-width: 1350px) {
+  .product_slider_img{
+    margin-left: -100px;
+  }
 }
 </style>

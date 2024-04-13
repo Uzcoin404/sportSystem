@@ -7,7 +7,7 @@ import CheckoutButton from '@/components/CheckoutButton.vue';
 </script>
 
 <template>
-  <main class="flex justify-between">
+  <main id="main" class="flex justify-between">
     <div class="ml-20 pt-32">
       <h3 class="text-2xl font-bold pl-5">Şəxsi məlumat</h3>
       <Select name="weight" label="Çəki">

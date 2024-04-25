@@ -12,7 +12,7 @@
   max-width: 660px;
   margin: auto;
 }
-.reg_main{
+.reg_main {
   max-width: 880px;
   margin: auto;
 }
@@ -45,8 +45,34 @@
   color: #01c151;
 }
 
-@media (max-height: 800px){
-  .total_sections{
-    
+@media (max-height: 900px) {
+  .total {
+    .total_title {
+      font-size: 24px;
+    }
+    .checkbox {
+      width: 20px;
+    }
+    .checkbox_field,
+    .checkbox_label {
+      font-size: 15px;
+    }
   }
+  .arrow,
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+@media (max-height: 860px) {
+  .checkbox {
+    width: 16px;
+  }
+  .checkbox_field,
+  .checkbox_label {
+    font-size: 15px;
+  }
+}
+@media (max-height: 800px) {
 }

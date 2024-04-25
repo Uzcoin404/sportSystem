@@ -17,7 +17,7 @@ defineProps({
   </div>
 </template>
 
-<style scoped>
+<style>
 .checkbox_field,
 .checkbox_label {
   font-size: 17px;

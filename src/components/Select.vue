@@ -8,10 +8,6 @@ defineProps({
   label: String
 })
 
-function handleChange() {
-
-}
-
 </script>
 
 <template>
@@ -21,14 +17,14 @@ function handleChange() {
       <select :name="name" :id="name" class="login_input select">
         <slot></slot>
       </select>
-      <div class="absolute top-1/2 -translate-y-1/2 left-6">
+      <div class="select_icon absolute top-1/2 -translate-y-1/2 left-6">
         <slot name="icon"></slot>
       </div>
     </div>
   </fieldset>
 </template>
 
-<style scoped>
+<style>
 .select {
   appearance: none;
   background: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2215%22 height=%229%22 viewBox=%220 0 15 9%22 fill=%22none%22%3E%0A%3Cpath d=%22M2 2L7.69722 7.69748L13.3833 2.01138%22 stroke=%22%23222222%22 stroke-width=%222.57354%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%0A%3C/svg%3E') no-repeat;
@@ -38,6 +34,16 @@ function handleChange() {
   width: 210px;
   /* width: 100%; */
   text-indent: 40px;
-  padding-right: 44px;
+}
+
+@media (max-width: 1370px) {
+  .select {
+    font-size: 18px;
+    height: 60px;
+    max-width: 200px;
+  }
+  .select_icon svg{
+    width: 24px;
+  }
 }
 </style>

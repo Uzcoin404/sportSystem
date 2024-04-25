@@ -40,4 +40,9 @@ defineProps({
   border: 1px solid #fff;
   margin-right: 12px;
 }
+@media (max-height: 1000px) {
+  .back_button{
+    top: 10px;
+  }
+}
 </style>

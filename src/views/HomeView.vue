@@ -8,8 +8,8 @@ import CheckoutButton from '@/components/CheckoutButton.vue';
 
 <template>
   <main id="main" class="flex justify-between">
-    <div class="ml-20 pt-32">
-      <h3 class="text-2xl font-bold pl-5">Şəxsi məlumat</h3>
+    <div class="xl:ml-20 ml-12 pt-32">
+      <h3 class="xl:text-2xl text-xl font-bold pl-5">Şəxsi məlumat</h3>
       <Select name="weight" label="Çəki">
         <option value="200">200 KG</option>
         <template v-slot:icon>

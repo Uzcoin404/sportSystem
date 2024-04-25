@@ -6,40 +6,40 @@ import DatePicker from './DatePicker.vue';
 
 <template>
   <section class="total flex-auto">
-    <h3 class="total_title pr-10 mb-2.5">HESAB</h3>
-    <h5 class="total_subtitle mb-2.5 py-1.5 pr-10">Əsas avadanlıq</h5>
+    <h3 class="total_title pr-10 tlg:mb-2.5 mb-1">HESAB</h3>
+    <h5 class="total_subtitle tlg:mb-2.5 mb-1 py-1.5 pr-10 xl leading-4 tmd:leading-6">Əsas avadanlıq</h5>
     <div class="mr-10">
-      <Checkbox name="ski" label="23AZN" class="mb-2.5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="mb-2.5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="mb-5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-5 mb-2">
         Xizək
       </Checkbox>
     </div>
-    <h5 class="total_subtitle mb-4 py-1.5 pr-8 mr-3">Geyim</h5>
+    <h5 class="total_subtitle tlg:mb-4 mb-2 py-1.5 pr-8 mr-3 leading-4 tmd:leading-6">Geyim</h5>
     <div class="mr-10">
-      <Checkbox name="ski" label="23AZN" class="mb-2.5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="mb-2.5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="mb-2.5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="mb-5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-5 mb-2">
         Xizək
       </Checkbox>
     </div>
-    <h5 class="total_subtitle mb-4 py-1.5 pr-6 mr-5">Əlavələr</h5>
+    <h5 class="total_subtitle tlg:mb-4 mb-2 py-1.5 pr-6 mr-5 leading-4 tmd:leading-6">Əlavələr</h5>
     <div class="mr-10">
-      <Checkbox name="ski" label="23AZN" class="mb-2.5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="mb-2.5">
+      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
     </div>
@@ -47,10 +47,9 @@ import DatePicker from './DatePicker.vue';
   </section>
 </template>
 
-<style scoped>
+<style>
 .total {
   max-width: 332px;
-  /* overflow: hidden; */
   padding-top: 20px;
   margin-right: 32px;
 }
@@ -69,12 +68,15 @@ import DatePicker from './DatePicker.vue';
   border-radius: 5px;
 }
 
-@media (max-height: 900px) {
-  .total_title{
-    font-size: 24px;
+@media (max-width: 1300px) {
+  .total{
+    max-width: 300px;
+    margin-right: 24px;
   }
-  .checkbox{
-    width: 20px;
+}
+@media (max-width: 1100px) {
+  .total{
+    max-width: 270px;
   }
 }
 </style>

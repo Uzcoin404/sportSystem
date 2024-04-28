@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div id="main">
+  <div id="main" class="overflow-hidden">
     <main class="h-full flex justify-center items-center">
       <div>
         <h1 class="title">Qeydləriniz üğürla başa çatmışdır!</h1>
@@ -76,29 +76,31 @@
       </div>
     </main>
   </div>
-  <button class="pickup_card">
-    <h3 class="title poppins absolute">Kartınızı alın vəödəniş şöbədinə yaxınlaşın!</h3>
-    <svg xmlns="http://www.w3.org/2000/svg" width="975" height="258" viewBox="0 0 975 258" fill="none">
-      <path
-        d="M0.513672 52.1668C0.513672 46.6439 4.99082 42.1668 10.5137 42.1668H836.104V215.507H10.5137C4.99083 215.507 0.513672 211.03 0.513672 205.507V52.1668Z"
-        fill="url(#paint0_linear_356_2265)" />
-      <path
-        d="M836.104 10.0836C836.104 1.17451 846.875 -3.28718 853.175 3.01247L971.929 121.766C975.834 125.671 975.834 132.003 971.929 135.908L853.175 254.662C846.875 260.961 836.104 256.5 836.104 247.591V10.0836Z"
-        fill="url(#paint1_linear_356_2265)" />
-      <defs>
-        <linearGradient id="paint0_linear_356_2265" x1="0.513672" y1="128.837" x2="979" y2="128.837"
-          gradientUnits="userSpaceOnUse">
-          <stop stop-color="#01C151" stop-opacity="0" />
-          <stop offset="0.7" stop-color="#01C151" />
-        </linearGradient>
-        <linearGradient id="paint1_linear_356_2265" x1="0.513672" y1="128.837" x2="979" y2="128.837"
-          gradientUnits="userSpaceOnUse">
-          <stop stop-color="#01C151" stop-opacity="0" />
-          <stop offset="0.7" stop-color="#01C151" />
-        </linearGradient>
-      </defs>
-    </svg>
-  </button>
+  <div class="absolute w-full h-full top-0 overflow-hidden pointer-events-none">
+    <button class="pickup_card">
+      <h3 class="title poppins absolute">Kartınızı alın vəödəniş şöbədinə yaxınlaşın!</h3>
+      <svg xmlns="http://www.w3.org/2000/svg" width="975" height="258" viewBox="0 0 975 258" fill="none">
+        <path
+          d="M0.513672 52.1668C0.513672 46.6439 4.99082 42.1668 10.5137 42.1668H836.104V215.507H10.5137C4.99083 215.507 0.513672 211.03 0.513672 205.507V52.1668Z"
+          fill="url(#paint0_linear_356_2265)" />
+        <path
+          d="M836.104 10.0836C836.104 1.17451 846.875 -3.28718 853.175 3.01247L971.929 121.766C975.834 125.671 975.834 132.003 971.929 135.908L853.175 254.662C846.875 260.961 836.104 256.5 836.104 247.591V10.0836Z"
+          fill="url(#paint1_linear_356_2265)" />
+        <defs>
+          <linearGradient id="paint0_linear_356_2265" x1="0.513672" y1="128.837" x2="979" y2="128.837"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#01C151" stop-opacity="0" />
+            <stop offset="0.7" stop-color="#01C151" />
+          </linearGradient>
+          <linearGradient id="paint1_linear_356_2265" x1="0.513672" y1="128.837" x2="979" y2="128.837"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#01C151" stop-opacity="0" />
+            <stop offset="0.7" stop-color="#01C151" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </button>
+  </div>
 </template>
 
 <style scoped>
@@ -106,6 +108,10 @@
   font-size: 44px;
   color: #222;
   font-weight: 700;
+
+  @media (max-width: 1200px) {
+    font-size: 36px;
+  }
 }
 
 .pickup_card {

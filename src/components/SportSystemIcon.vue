@@ -6,6 +6,6 @@
   .logo{
     position: absolute;
     left: 90px;
-    bottom: 90px;
+    bottom: 120px;
   }
 </style>

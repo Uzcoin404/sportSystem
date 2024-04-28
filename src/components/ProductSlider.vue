@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, EffectFade } from 'swiper/modules';
+import SuitFeature from './SuitFeature.vue';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,16 +16,23 @@ import 'swiper/css/effect-fade';
     prevEl: '.swiper-button-prev'
   }" :slides-per-view="1" effect="fade" class="product_slider">
     <SwiperSlide>
-      <img src="/img/Screenshot 2024-03-10 at 09.50 1.jpg" alt="" class="product_slider_img">
-    </SwiperSlide>
-    <SwiperSlide>
-      <img src="/img/image-from-rawpixel-id-14386361-jpeg 1.jpg" alt="" class="product_slider_img">
+      <img src="/img/Screen Shot 2024-03-09 at 3.58 1 (2).jpg" alt="" class="product_slider_img">
+      <SuitFeature style="top: 5%; left: 48.6%;" />
+      <SuitFeature style="top: 12%; left: 48%;" />
+      <SuitFeature style="top: 41%; left: 42%;" />
+      <SuitFeature style="top: 51%; left: 51%;" />
+      <SuitFeature style="top: 59%; left: 12%;" />
+      <SuitFeature style="top: 76%; left: 53%;" />
+      <SuitFeature style="top: 81%; left: 67%;" />
     </SwiperSlide>
     <SwiperSlide>
       <img src="/img/Mask group.jpg" alt="" class="product_slider_img">
     </SwiperSlide>
     <SwiperSlide>
-      <img src="/img/Screen Shot 2024-03-09 at 3.58 1 (2).jpg" alt="" class="product_slider_img">
+      <img src="/img/image-from-rawpixel-id-14386361-jpeg 1.jpg" alt="" class="product_slider_img">
+    </SwiperSlide>
+    <SwiperSlide>
+      <img src="/img/Screenshot 2024-03-10 at 09.50 1.jpg" alt="" class="product_slider_img">
     </SwiperSlide>
   </Swiper>
   <div class="swiper-button-prev">

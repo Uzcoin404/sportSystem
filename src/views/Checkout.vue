@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div id="main" class="overflow-hidden">
+  <div id="main">
     <main class="h-full flex justify-center items-center">
       <div>
         <h1 class="title">Qeydləriniz üğürla başa çatmışdır!</h1>
@@ -104,6 +104,9 @@
 </template>
 
 <style scoped>
+#main{
+
+}
 .title {
   font-size: 44px;
   color: #222;

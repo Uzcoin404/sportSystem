@@ -1,11 +1,15 @@
 <script setup>
-import { ref } from 'vue';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+const props = defineProps(['type', 'suit']);
 
-const featureState = ref(false);
+const store = useStore();
+const featureState = computed(() => store.state[props.suit][props.type]);
+console.log(featureState);
 </script>
 
 <template>
-  <div :class="{ 'suit_feature': true, 'active': featureState }" @click="featureState = !featureState">
+  <div :class="{ 'suit_feature': true, 'active': featureState }" @click="$emit('handleFeature')">
     <svg v-show="!featureState" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"
       fill="none">
       <circle cx="16.9446" cy="17.1575" r="14.5221" fill="white" fill-opacity="0.3" stroke="#222222"
@@ -21,7 +25,7 @@ const featureState = ref(false);
       <path d="M16.4268 21.6914L10.201 15.4657" stroke="#00963D" stroke-width="3.49734" />
     </svg>
 
-    <p class="xl:text-xl font-bold xl:px-4 px-2">Eynək</p>
+    <p class="xl:text-xl font-bold xl:px-4 px-2"><slot></slot></p>
   </div>
 </template>
 

@@ -9,37 +9,37 @@ import DatePicker from './DatePicker.vue';
     <h3 class="total_title pr-10 tlg:mb-2.5 mb-1">HESAB</h3>
     <h5 class="total_subtitle tlg:mb-2.5 mb-1 py-1.5 pr-10 xl leading-4 tmd:leading-6">Əsas avadanlıq</h5>
     <div class="mr-10">
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
-        Xizək
+      <Checkbox type="ski" name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
+        Ski
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
-        Xizək
+      <Checkbox type="shoe" name="shoe" label="23AZN" class="tlg:mb-2.5 mb-1">
+        Shoe
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-5 mb-2">
-        Xizək
+      <Checkbox type="stick" name="stick" label="23AZN" class="tlg:mb-5 mb-2">
+        Stick
       </Checkbox>
     </div>
     <h5 class="total_subtitle tlg:mb-4 mb-2 py-1.5 pr-8 mr-3 leading-4 tmd:leading-6">Geyim</h5>
     <div class="mr-10">
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
-        Xizək
+      <Checkbox type="helmet" name="helmet" label="23AZN" class="tlg:mb-2.5 mb-1">
+        Helmet
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
-        Xizək
+      <Checkbox type="glasses" name="glasses" label="23AZN" class="tlg:mb-2.5 mb-1">
+        Glasses
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
-        Xizək
+      <Checkbox type="jacket" name="jacket" label="23AZN" class="tlg:mb-2.5 mb-1">
+        Jacket
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-5 mb-2">
-        Xizək
+      <Checkbox type="pants" name="pants" label="23AZN" class="tlg:mb-5 mb-2">
+        Pants
       </Checkbox>
     </div>
     <h5 class="total_subtitle tlg:mb-4 mb-2 py-1.5 pr-6 mr-5 leading-4 tmd:leading-6">Əlavələr</h5>
     <div class="mr-10">
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
+      <Checkbox name="ski2" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
-      <Checkbox name="ski" label="23AZN" class="tlg:mb-2.5 mb-1">
+      <Checkbox name="ski3" label="23AZN" class="tlg:mb-2.5 mb-1">
         Xizək
       </Checkbox>
     </div>

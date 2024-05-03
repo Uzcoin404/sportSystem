@@ -11,7 +11,8 @@ import CheckoutButton from '@/components/CheckoutButton.vue';
     <div class="xl:ml-20 ml-12 pt-32 h-max">
       <h3 class="xl:text-2xl text-xl font-bold pl-5">Şəxsi məlumat</h3>
       <Select name="weight" label="Çəki">
-        <option value="200">200 KG</option>
+        <option value="kg">kg</option>
+        <option value="kg">pound</option>
         <template v-slot:icon>
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="39" viewBox="0 0 32 39" fill="none">
             <mask id="path-1-inside-1_355_118" fill="white">
@@ -25,7 +26,9 @@ import CheckoutButton from '@/components/CheckoutButton.vue';
         </template>
       </Select>
       <Select name="height" label="Boy">
-        <option value="200">200 CM</option>
+        <option value="200">cm</option>
+        <option value="200">feet</option>
+        <option value="200">inch</option>
         <template v-slot:icon>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -62,7 +65,8 @@ import CheckoutButton from '@/components/CheckoutButton.vue';
         </template>
       </Select>
       <Select name="height" label="Ayağğabı ölçüsü">
-        <option value="200">56 EU</option>
+        <option value="200">EU</option>
+        <option value="200">US</option>
         <template v-slot:icon>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 28 27" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd"

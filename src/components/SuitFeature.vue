@@ -4,8 +4,7 @@ import { useStore } from 'vuex';
 const props = defineProps(['type', 'suit']);
 
 const store = useStore();
-const featureState = computed(() => store.state[props.suit][props.type]);
-console.log(featureState);
+const featureState = computed(() => store.state[store.state.currentSuit][props.type]);
 </script>
 
 <template>

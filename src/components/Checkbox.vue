@@ -10,7 +10,6 @@ const props = defineProps({
 const store = useStore();
 
 const checked = computed(() => store.state[store.state.currentSuit][props.type]);
-console.log(store.state.currentSuit);
 </script>
 
 <template>

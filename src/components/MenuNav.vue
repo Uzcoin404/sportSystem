@@ -1,12 +1,14 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useStore } from 'vuex';
 const menuList = [
   'Yeni başlayan',
   'Orta',
   'Peşəkar'
 ]
+const store = useStore();
 const suitType = ref(menuList[0]);
-
+const menuText = computed(() => store.state.currentSuit.split(/(?<=[a-z])(?=[A-Z])/));
 </script>
 
 <template>
@@ -42,7 +44,7 @@ const suitType = ref(menuList[0]);
 
       </div>
     </div>
-    <h2 class="2xl:text-3xl xl:text-2xl text-xl font-bold text-center mt-4">Xizək: Qadın</h2>
+      <h2 class="2xl:text-3xl xl:text-2xl text-xl font-bold text-center mt-4 capitalize">{{ menuText[0] }}: {{ menuText[1] }}</h2>
   </div>
 </template>
 

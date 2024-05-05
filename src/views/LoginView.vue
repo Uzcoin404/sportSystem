@@ -1,24 +1,53 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router';
-import { parsePhoneNumber, format } from "libphonenumber-js"
+import { formatIncompletePhoneNumber } from "libphonenumber-js"
 import Check from "@/components/icons/Check.vue"
 
 const phoneNumber = ref("");
-const status = ref({ success: false, data: null });
+const phoneStatus = ref({ success: false, data: null, submitting: false });
 
 function formatPhoneNumber() {
-  console.log(phoneNumber);
   try {
-    const parsedPhoneNumber = parsePhoneNumber(phoneNumber.value, 'AZ')
-    phoneNumber.value = format(parsedPhoneNumber);
+    const parsedPhoneNumber = formatIncompletePhoneNumber(phoneNumber.value)
+    phoneNumber.value = parsedPhoneNumber;
   } catch (e) {
     console.error('Invalid phone number:', e);
   }
+  console.log(phoneNumber);
 }
 
-function submitPhoneNumber() {
-  status.value.success = true;
+async function submitPhoneNumber() {
+  console.log(phoneNumber);
+  phoneStatus.value.submitting = true;
+  try {
+    const response = await fetch('https://example.com/submit-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ PhoneNumber: phoneNumber.value }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+    } else {
+      console.log(response.data);
+      if (response.data) {
+        
+      }
+      phoneStatus.value.success = true;
+      this.formData = {
+        name: '',
+        email: '',
+        message: '',
+      };
+    }
+  } catch (error) {
+    this.errors.push('Network error occurred.');
+  } finally {
+    phoneStatus.value.submitting = false;
+  }
 }
 </script>
 
@@ -35,9 +64,10 @@ function submitPhoneNumber() {
         <form action="#" @submit.prevent="submitPhoneNumber">
           <label for="phone" class="mb-1 ml-2.5">Telefon nömrəni</label>
           <div class="flex mb-2">
-            <input type="text" class="login_input" v-model="phoneNumber" placeholder="+994 (00) 000 0000" required>
-            <button class="login_button text-2xl">
-              <Check v-show="status.success" class="mr-4" />
+            <input type="text" class="login_input" v-model="phoneNumber" @input="formatPhoneNumber"
+              placeholder="+994 (00) 000 0000" required>
+            <button class="login_button text-2xl" :disabled="phoneStatus.submitting">
+              <Check v-show="phoneStatus.success" class="mr-4" />
               Yoxla
             </button>
           </div>

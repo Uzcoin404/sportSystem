@@ -1,6 +1,6 @@
 <script setup>
 
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, EffectFade } from 'swiper/modules';
@@ -12,63 +12,170 @@ import 'swiper/css/effect-fade';
 
 const store = useStore();
 const suitSlider = ref(null);
+const index = computed(() => store.state.currentSuitIndex)
 
-
+const positions = [
+  [
+    {
+      top: '17%',
+      left: '48.6%',
+      type: 'helmet',
+    },
+    {
+      top: '22%',
+      left: '48%',
+      type: 'glasses',
+    },
+    {
+      top: '49%',
+      left: '42%',
+      type: 'jacket',
+    },
+    {
+      top: '60%',
+      left: '51%',
+      type: 'pants',
+    },
+    {
+      top: '65%',
+      left: '12%',
+      type: 'stick',
+    },
+    {
+      top: '79%',
+      left: '53%',
+      type: 'shoe',
+    },
+    {
+      top: '83%',
+      left: '67%',
+      type: 'ski',
+    },
+  ],
+  [
+    {
+      top: '17%',
+      left: '48.6%',
+      type: 'helmet',
+    },
+    {
+      top: '22%',
+      left: '48%',
+      type: 'glasses',
+    },
+    {
+      top: '49%',
+      left: '42%',
+      type: 'jacket',
+    },
+    {
+      top: '60%',
+      left: '51%',
+      type: 'pants',
+    },
+    {
+      top: '65%',
+      left: '12%',
+      type: 'stick',
+    },
+    {
+      top: '79%',
+      left: '53%',
+      type: 'shoe',
+    },
+    {
+      top: '83%',
+      left: '67%',
+      type: 'ski',
+    },
+  ],
+  [
+    {
+      top: '17%',
+      left: '48.6%',
+      type: 'helmet',
+    },
+    {
+      top: '22%',
+      left: '48%',
+      type: 'glasses',
+    },
+    {
+      top: '49%',
+      left: '42%',
+      type: 'jacket',
+    },
+    {
+      top: '60%',
+      left: '51%',
+      type: 'pants',
+    },
+    {
+      top: '65%',
+      left: '12%',
+      type: 'stick',
+    },
+    {
+      top: '79%',
+      left: '53%',
+      type: 'shoe',
+    },
+    {
+      top: '83%',
+      left: '67%',
+      type: 'ski',
+    },
+  ],
+  [
+    {
+      top: '17%',
+      left: '48.6%',
+      type: 'helmet',
+    },
+    {
+      top: '22%',
+      left: '48%',
+      type: 'glasses',
+    },
+    {
+      top: '49%',
+      left: '42%',
+      type: 'jacket',
+    },
+    {
+      top: '60%',
+      left: '51%',
+      type: 'pants',
+    },
+    {
+      top: '65%',
+      left: '12%',
+      type: 'stick',
+    },
+    {
+      top: '79%',
+      left: '53%',
+      type: 'shoe',
+    },
+    {
+      top: '83%',
+      left: '67%',
+      type: 'ski',
+    },
+  ],
+]
 </script>
 
 <template>
-  <!-- <div class="absolute left-0 bottom-0 w-full"> -->
-  <Swiper loop :modules="[Navigation, EffectFade]" ref="suitSlider" :navigation="{
+  <Swiper :modules="[Navigation, EffectFade]" ref="suitSlider" :navigation="{
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
-  }" :slides-per-view="1" effect="fade" @realIndexChange="store.commit('nextSuit')" class="product_slider">
+  }" :slides-per-view="1" effect="fade" @realIndexChange="(event) => store.commit('nextSuit', event.activeIndex)" class="product_slider">
     <SwiperSlide>
       <img src="/img/Screen Shot 2024-03-09 at 3.58 1 (2).jpg" alt="" class="product_slider_img">
-      <SuitFeature type="helmet" suit="skiingWoman"
-        @handleFeature="store.commit('updateFeatures', 'helmet', 'skiingWoman')" style="top: 5%; left: 48.6%;">
-        Helmet</SuitFeature>
-      <SuitFeature type="glasses" suit="skiingWoman"
-        @handleFeature="store.commit('updateFeatures', 'glasses', 'skiingWoman')" style="top: 12%; left: 48%;">
-        Glasses</SuitFeature>
-      <SuitFeature type="jacket" suit="skiingWoman"
-        @handleFeature="store.commit('updateFeatures', 'jacket', 'skiingWoman')" style="top: 41%; left: 42%;">
-        Jacket</SuitFeature>
-      <SuitFeature type="pants" suit="skiingWoman"
-        @handleFeature="store.commit('updateFeatures', 'pants', 'skiingWoman')" style="top: 51%; left: 51%;">
-        Pants</SuitFeature>
-      <SuitFeature type="stick" suit="skiingWoman"
-        @handleFeature="store.commit('updateFeatures', 'stick', 'skiingWoman')" style="top: 59%; left: 12%;">
-        Stick</SuitFeature>
-      <SuitFeature type="shoe" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'shoe', 'skiingWoman')"
-        style="top: 76%; left: 53%;">
-        Shoe</SuitFeature>
-      <SuitFeature type="ski" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'ski', 'skiingWoman')"
-        style="top: 81%; left: 67%;">
-        Ski</SuitFeature>
     </SwiperSlide>
     <SwiperSlide>
       <img src="/img/Mask group.jpg" alt="" class="product_slider_img">
-      <SuitFeature type="helmet" suit="skiingMan"
-        @handleFeature="store.commit('updateFeatures', 'helmet', 'skiingMan')" style="top: 5%; left: 48.6%;">
-        Helmet</SuitFeature>
-      <SuitFeature type="glasses" suit="skiingMan"
-        @handleFeature="store.commit('updateFeatures', 'glasses', 'skiingMan')" style="top: 12%; left: 48%;">
-        Glasses</SuitFeature>
-      <SuitFeature type="jacket" suit="skiingMan"
-        @handleFeature="store.commit('updateFeatures', 'jacket', 'skiingMan')" style="top: 41%; left: 42%;">
-        Jacket</SuitFeature>
-      <SuitFeature type="pants" suit="skiingMan"
-        @handleFeature="store.commit('updateFeatures', 'pants', 'skiingMan')" style="top: 51%; left: 51%;">
-        Pants</SuitFeature>
-      <SuitFeature type="stick" suit="skiingMan"
-        @handleFeature="store.commit('updateFeatures', 'stick', 'skiingMan')" style="top: 59%; left: 12%;">
-        Stick</SuitFeature>
-      <SuitFeature type="shoe" suit="skiingMan" @handleFeature="store.commit('updateFeatures', 'shoe', 'skiingMan')"
-        style="top: 76%; left: 53%;">
-        Shoe</SuitFeature>
-      <SuitFeature type="ski" suit="skiingMan" @handleFeature="store.commit('updateFeatures', 'ski', 'skiingMan')"
-        style="top: 81%; left: 67%;">
-        Ski</SuitFeature>
     </SwiperSlide>
     <SwiperSlide>
       <img src="/img/image-from-rawpixel-id-14386361-jpeg 1.jpg" alt="" class="product_slider_img">
@@ -77,6 +184,29 @@ const suitSlider = ref(null);
       <img src="/img/Screenshot 2024-03-10 at 09.50 1.jpg" alt="" class="product_slider_img">
     </SwiperSlide>
   </Swiper>
+  <template v-for="item in positions[index]" :key="item.type">
+    <SuitFeature :type="item.type" @handleFeature="store.commit('updateFeatures', item.type)"
+      :style="{ top: item.top, left: item.left }">
+      {{ item.type }}</SuitFeature>
+  </template>
+  <!-- <SuitFeature type="glasses" suit="skiingWoman"
+    @handleFeature="store.commit('updateFeatures', 'glasses', 'skiingWoman')" style="top: 12%; left: 48%;">
+    Glasses</SuitFeature>
+  <SuitFeature type="jacket" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'jacket', 'skiingWoman')"
+    style="top: 41%; left: 42%;">
+    Jacket</SuitFeature>
+  <SuitFeature type="pants" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'pants', 'skiingWoman')"
+    style="top: 51%; left: 51%;">
+    Pants</SuitFeature>
+  <SuitFeature type="stick" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'stick', 'skiingWoman')"
+    style="top: 59%; left: 12%;">
+    Stick</SuitFeature>
+  <SuitFeature type="shoe" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'shoe', 'skiingWoman')"
+    style="top: 76%; left: 53%;">
+    Shoe</SuitFeature>
+  <SuitFeature type="ski" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'ski', 'skiingWoman')"
+    style="top: 81%; left: 67%;">
+    Ski</SuitFeature> -->
   <div class="swiper-button-prev">
     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="25" viewBox="0 0 14 25" fill="none">
       <path d="M12.2715 0.897997L0.978152 12.2234L12.2715 23.5488" stroke="black" stroke-width="1.5"
@@ -90,7 +220,6 @@ const suitSlider = ref(null);
     </svg>
   </div>
 
-  <!-- </div> -->
 </template>
 
 <style scoped>

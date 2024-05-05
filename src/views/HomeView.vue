@@ -9,8 +9,8 @@ import CheckoutButton from '@/components/CheckoutButton.vue';
 <template>
   <main id="main" class="flex justify-between">
     <div class="xl:ml-20 ml-12 pt-32 h-max">
-      <h3 class="xl:text-2xl text-xl font-bold pl-5">Şəxsi məlumat</h3>
-      <Select name="weight" label="Çəki">
+      <h3 class="xl:text-2xl text-xl font-bold pl-5">Şəxsi məlumat</h3>      
+      <Select name="weight" label="Çəki" value="70">
         <option value="kg">kg</option>
         <option value="kg">pound</option>
         <template v-slot:icon>
@@ -25,7 +25,7 @@ import CheckoutButton from '@/components/CheckoutButton.vue';
           </svg>
         </template>
       </Select>
-      <Select name="height" label="Boy">
+      <Select name="height" label="Boy" value="171">
         <option value="200">cm</option>
         <option value="200">feet</option>
         <option value="200">inch</option>
@@ -64,7 +64,7 @@ import CheckoutButton from '@/components/CheckoutButton.vue';
           </svg>
         </template>
       </Select>
-      <Select name="height" label="Ayağğabı ölçüsü">
+      <Select name="height" label="Ayağğabı ölçüsü" value="40">
         <option value="200">EU</option>
         <option value="200">US</option>
         <template v-slot:icon>

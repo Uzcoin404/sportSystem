@@ -12,7 +12,7 @@ const suitFeatures = {
 const store = createStore({
   state: {
     currentSuit: "skiingWoman",
-    currentSuitIndex: 0,
+    currentSuitIndex: 1,
     suits: suits,
     skiingWoman: {
       helmet: false,
@@ -57,15 +57,16 @@ const store = createStore({
       state[state.currentSuit][type] = !state[state.currentSuit][type];
       console.log(state.skiingMan);
     },
-    nextSuit(state, index) {
-      // if (index != 3) {
-        state.currentSuit = suits[index];
-        state.currentSuitIndex = index;
-        console.log(suits[index], index);
-      // } else {
-      //   state.currentSuit = suits[0];
-      //   state.currentSuitIndex = 0;
-      // }
+    nextSuit(state) {
+      const index = suits.indexOf(state.currentSuit);
+      if (index != 3) {
+        state.currentSuit = suits[index + 1];
+        state.currentSuitIndex = index + 1;
+      } else {
+        state.currentSuit = suits[0];
+        state.currentSuitIndex = 0;
+      }
+      console.log(suits[index], index);
     },
   },
   actions: {},

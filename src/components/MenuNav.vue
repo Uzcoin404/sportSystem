@@ -26,8 +26,8 @@ const menuText = computed(() => store.state.currentSuit.split(/(?<=[a-z])(?=[A-Z
             </template>
           </div>
         </div>
-
-        <svg xmlns="http://www.w3.org/2000/svg" width="710" height="111" viewBox="0 0 710 111" fill="none" class="menu_shape">
+        <svg xmlns="http://www.w3.org/2000/svg" width="710" height="111" viewBox="0 0 710 111" fill="none"
+          class="menu_shape">
           <path
             d="M14.4785 28.0041C6.77011 28.2928 1.33228 35.6748 3.34207 43.1222L18.6415 99.8151C20.0545 105.051 24.8037 108.689 30.227 108.689H695.788C702.935 108.689 708.498 102.48 707.716 95.3763L698.711 13.523C698.023 7.26895 692.621 2.60824 686.334 2.8437L14.4785 28.0041Z"
             fill="url(#paint0_linear_444_8)" stroke="white" stroke-width="4" />
@@ -41,10 +41,11 @@ const menuText = computed(() => store.state.currentSuit.split(/(?<=[a-z])(?=[A-Z
             </linearGradient>
           </defs>
         </svg>
-
       </div>
     </div>
-      <h2 class="2xl:text-3xl xl:text-2xl text-xl font-bold text-center mt-4 capitalize">{{ menuText[0] }}: {{ menuText[1] }}</h2>
+    <h2 class="absolute -translate-x-1/2 left-1/2 pointer-events-none 2xl:text-3xl xl:text-2xl text-xl font-bold text-center mt-4 capitalize">
+      {{ menuText[0] }}: {{ menuText[1] }}
+    </h2>
   </div>
 </template>
 
@@ -66,18 +67,19 @@ const menuText = computed(() => store.state.currentSuit.split(/(?<=[a-z])(?=[A-Z
 }
 
 @media (max-width: 1400px) {
-  .menu_shape{
+  .menu_shape {
     width: 80%;
   }
-  .menu_wrapper{
-    max-width: 80%; 
+
+  .menu_wrapper {
+    max-width: 80%;
   }
-  .menu_col{
+
+  .menu_col {
     margin: 25px 50px 9px;
     height: 50px;
   }
-  #menuItem{
-    
-  }
+
+  #menuItem {}
 }
 </style>

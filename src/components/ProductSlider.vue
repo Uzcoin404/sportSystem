@@ -18,12 +18,12 @@ const positions = [
   [
     {
       top: '17%',
-      left: '48.6%',
+      left: '48%',
       type: 'helmet',
     },
     {
-      top: '22%',
-      left: '48%',
+      top: '23.5%',
+      left: '47.8%',
       type: 'glasses',
     },
     {
@@ -42,8 +42,8 @@ const positions = [
       type: 'stick',
     },
     {
-      top: '79%',
-      left: '53%',
+      top: '80%',
+      left: '52%',
       type: 'shoe',
     },
     {
@@ -54,19 +54,20 @@ const positions = [
   ],
   [
     {
-      top: '17%',
-      left: '48.6%',
+      top: '19%',
+      left: '54%',
       type: 'helmet',
     },
     {
-      top: '22%',
-      left: '48%',
+      top: '26%',
+      left: '53%',
       type: 'glasses',
     },
     {
-      top: '49%',
+      top: '40%',
       left: '42%',
       type: 'jacket',
+      white: true
     },
     {
       top: '60%',
@@ -170,7 +171,8 @@ const positions = [
   <Swiper :modules="[Navigation, EffectFade]" ref="suitSlider" :navigation="{
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
-  }" :slides-per-view="1" effect="fade" @realIndexChange="(event) => store.commit('nextSuit', event.activeIndex)" class="product_slider">
+  }" :slides-per-view="1" loop :initialSlide="1" effect="fade"
+    @realIndexChange="(event) => store.commit('nextSuit', event.activeIndex)" class="product_slider">
     <SwiperSlide>
       <img src="/img/Screen Shot 2024-03-09 at 3.58 1 (2).jpg" alt="" class="product_slider_img">
     </SwiperSlide>
@@ -184,29 +186,12 @@ const positions = [
       <img src="/img/Screenshot 2024-03-10 at 09.50 1.jpg" alt="" class="product_slider_img">
     </SwiperSlide>
   </Swiper>
-  <template v-for="item in positions[index]" :key="item.type">
-    <SuitFeature :type="item.type" @handleFeature="store.commit('updateFeatures', item.type)"
+  <template v-for="(item, i) in positions[index]" :key="i">
+    <SuitFeature :type="item.type" @handleFeature="store.commit('updateFeatures', item.type)" :white="item?.white"
       :style="{ top: item.top, left: item.left }">
-      {{ item.type }}</SuitFeature>
+      {{ item.type }}
+    </SuitFeature>
   </template>
-  <!-- <SuitFeature type="glasses" suit="skiingWoman"
-    @handleFeature="store.commit('updateFeatures', 'glasses', 'skiingWoman')" style="top: 12%; left: 48%;">
-    Glasses</SuitFeature>
-  <SuitFeature type="jacket" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'jacket', 'skiingWoman')"
-    style="top: 41%; left: 42%;">
-    Jacket</SuitFeature>
-  <SuitFeature type="pants" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'pants', 'skiingWoman')"
-    style="top: 51%; left: 51%;">
-    Pants</SuitFeature>
-  <SuitFeature type="stick" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'stick', 'skiingWoman')"
-    style="top: 59%; left: 12%;">
-    Stick</SuitFeature>
-  <SuitFeature type="shoe" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'shoe', 'skiingWoman')"
-    style="top: 76%; left: 53%;">
-    Shoe</SuitFeature>
-  <SuitFeature type="ski" suit="skiingWoman" @handleFeature="store.commit('updateFeatures', 'ski', 'skiingWoman')"
-    style="top: 81%; left: 67%;">
-    Ski</SuitFeature> -->
   <div class="swiper-button-prev">
     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="25" viewBox="0 0 14 25" fill="none">
       <path d="M12.2715 0.897997L0.978152 12.2234L12.2715 23.5488" stroke="black" stroke-width="1.5"
@@ -231,8 +216,14 @@ const positions = [
   z-index: -10;
 }
 
-.swiper-slide {
+/* .swiper-wrapper{
   margin-top: auto;
+  align-items: end;
+} */
+.swiper-slide {
+  padding-top: 300px;
+  margin-top: auto;
+  background-color: #fff;
 }
 
 .swiper-button-prev,

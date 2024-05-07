@@ -21,10 +21,12 @@ async function submitPhoneNumber() {
   console.log(phoneNumber);
   phoneStatus.value.submitting = true;
   try {
-    const response = await fetch('https://example.com/submit-form', {
+    const response = await fetch(import.meta.env.VITE_APP_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': 'Basic V2ViRXhjaGFuZ2U6UEBzc3dvcmQwNA==',
+        'Operation': 'CheckPhoneNumber',
       },
       body: JSON.stringify({ PhoneNumber: phoneNumber.value }),
     });
@@ -34,7 +36,7 @@ async function submitPhoneNumber() {
     } else {
       console.log(response.data);
       if (response.data) {
-        
+
       }
       phoneStatus.value.success = true;
       this.formData = {

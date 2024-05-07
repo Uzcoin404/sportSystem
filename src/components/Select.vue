@@ -19,7 +19,7 @@ const props = defineProps({
       <select :name="name" :id="name" class="login_input select">
         <slot></slot>
       </select>
-      <div class="select_icon absolute top-1/2 -translate-y-1/2 left-6">
+      <div class="select_icon absolute top-1/2 -translate-y-1/2 left-6 pointer-events-none">
         <slot name="icon"></slot>
       </div>
       <input type="number" class="select_textfield" @focus="isFocused = true" @blur="isFocused = false"

@@ -12,7 +12,7 @@ const suitFeatures = {
 const store = createStore({
   state: {
     currentSuit: "skiingWoman",
-    currentSuitIndex: 1,
+    currentSuitIndex: 0,
     suits: suits,
     skiingWoman: {
       helmet: false,
@@ -21,6 +21,7 @@ const store = createStore({
       shoe: false,
       jacket: false,
       pants: false,
+      stick: false
     },
     skiingMan: {
       helmet: false,
@@ -29,6 +30,7 @@ const store = createStore({
       shoe: false,
       jacket: false,
       pants: false,
+      stick: false
     },
     snowboardWoman: {
       helmet: false,

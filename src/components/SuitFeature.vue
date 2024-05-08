@@ -1,14 +1,15 @@
 <script setup>
 import { computed } from 'vue';
 import { useStore } from 'vuex';
-const props = defineProps(['type', 'suit', 'white']);
+const props = defineProps(['type', 'suit', 'white', 'reverse']);
 
 const store = useStore();
 const featureState = computed(() => store.state[store.state.currentSuit][props.type]);
 </script>
 
 <template>
-  <div :class="{ 'suit_feature': true, 'active': featureState, 'white': white }" @click="$emit('handleFeature')">
+  <div :class="{ 'suit_feature': true, 'active': featureState, 'white': white, 'reverse': reverse }"
+    @click="$emit('handleFeature')">
     <div class="suit_feature_icon">
       <svg v-show="!featureState" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"
         fill="none">
@@ -35,8 +36,6 @@ const featureState = computed(() => store.state[store.state.currentSuit][props.t
 <style scoped>
 .suit_feature {
   position: absolute;
-  /* top: attr(style-top);
-  left: attr(style-left); */
   display: flex;
   align-items: center;
   color: #222;
@@ -44,19 +43,27 @@ const featureState = computed(() => store.state[store.state.currentSuit][props.t
   cursor: pointer;
   text-transform: capitalize;
 
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
   .suit_feature_icon {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
   }
-  &.white:not(.active)  {
-    color: #fff;
+
+  &.white:not(.active) {
+    /* color: #fff; */
+
     svg * {
       stroke: #fff;
     }
   }
+
   &.white:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
   }
+
   &.active.white {
     background-color: rgba(255, 255, 255, 0.4);
   }

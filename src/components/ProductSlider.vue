@@ -75,92 +75,87 @@ const positions = [
       type: 'pants',
     },
     {
-      top: '65%',
-      left: '12%',
+      top: '68%',
+      left: '24%',
       type: 'stick',
     },
     {
-      top: '79%',
-      left: '53%',
+      top: '75%',
+      left: '30%',
       type: 'shoe',
     },
     {
       top: '83%',
-      left: '67%',
+      left: '58%',
       type: 'ski',
     },
   ],
   [
     {
       top: '17%',
-      left: '48.6%',
+      left: '41%',
       type: 'helmet',
+      reverse: true
     },
     {
-      top: '22%',
-      left: '48%',
+      top: '28%',
+      left: '40%',
       type: 'glasses',
+      reverse: true,
+      white: true
     },
     {
-      top: '49%',
-      left: '42%',
+      top: '44%',
+      left: '49%',
       type: 'jacket',
+      white: true
     },
     {
-      top: '60%',
+      top: '55%',
       left: '51%',
       type: 'pants',
     },
     {
-      top: '65%',
-      left: '12%',
-      type: 'stick',
-    },
-    {
-      top: '79%',
+      top: '77%',
       left: '53%',
       type: 'shoe',
     },
     {
       top: '83%',
-      left: '67%',
+      left: '63%',
       type: 'ski',
     },
   ],
   [
     {
-      top: '17%',
-      left: '48.6%',
+      top: '20%',
+      left: '49%',
       type: 'helmet',
     },
     {
-      top: '22%',
+      top: '31%',
       left: '48%',
       type: 'glasses',
     },
     {
-      top: '49%',
-      left: '42%',
+      top: '40%',
+      left: '33%',
       type: 'jacket',
+      white: true
     },
     {
       top: '60%',
-      left: '51%',
+      left: '45%',
       type: 'pants',
     },
     {
-      top: '65%',
-      left: '12%',
-      type: 'stick',
-    },
-    {
-      top: '79%',
-      left: '53%',
+      top: '80%',
+      left: '34%',
       type: 'shoe',
     },
     {
-      top: '83%',
-      left: '67%',
+      top: '88%',
+      left: '38%',
       type: 'ski',
     },
   ],
@@ -171,7 +166,7 @@ const positions = [
   <Swiper :modules="[Navigation, EffectFade]" ref="suitSlider" :navigation="{
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
-  }" :slides-per-view="1" loop :initialSlide="1" effect="fade"
+  }" :slides-per-view="1" loop :initialSlide="0" effect="fade"
     @realIndexChange="(event) => store.commit('nextSuit', event.activeIndex)" class="product_slider">
     <SwiperSlide>
       <img src="/img/Screen Shot 2024-03-09 at 3.58 1 (2).jpg" alt="" class="product_slider_img">
@@ -187,8 +182,8 @@ const positions = [
     </SwiperSlide>
   </Swiper>
   <template v-for="(item, i) in positions[index]" :key="i">
-    <SuitFeature :type="item.type" @handleFeature="store.commit('updateFeatures', item.type)" :white="item?.white"
-      :style="{ top: item.top, left: item.left }">
+    <SuitFeature :type="item.type" @handleFeature="store.commit('updateFeatures', item.type)" :white="item.white"
+      :reverse="item.reverse" :style="{ top: item.top, left: item.left }">
       {{ item.type }}
     </SuitFeature>
   </template>

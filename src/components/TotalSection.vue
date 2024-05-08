@@ -1,7 +1,9 @@
 <script setup>
+import { useStore } from 'vuex';
 import Checkbox from './Checkbox.vue';
 import DatePicker from './DatePicker.vue';
 
+const store = useStore();
 </script>
 
 <template>
@@ -15,7 +17,7 @@ import DatePicker from './DatePicker.vue';
       <Checkbox type="shoe" name="shoe" label="23AZN" class="tlg:mb-2.5 mb-1">
         Shoe
       </Checkbox>
-      <Checkbox type="stick" name="stick" label="23AZN" class="tlg:mb-5 mb-2">
+      <Checkbox type="stick" name="stick" label="23AZN" class="tlg:mb-5 mb-2" v-show="store.state.currentSuitIndex == 0 || store.state.currentSuitIndex == 1">
         Stick
       </Checkbox>
     </div>

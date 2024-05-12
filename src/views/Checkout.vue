@@ -119,8 +119,8 @@
 
 .pickup_card {
   position: absolute;
-  bottom: 20px;
-  right: -40px;
+  bottom: 40px;
+  right: 0px;
 }
 
 .title.poppins {

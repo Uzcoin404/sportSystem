@@ -13,9 +13,9 @@ const checked = computed(() => store.state[store.state.currentSuit][props.type])
 </script>
 
 <template>
-  <div :class="{ '.checkbox_wrapper flex justify-between': true, 'checked': checked }">
+  <div :class="{ 'checkbox_wrapper flex justify-between': true, 'checked': checked }">
     <fieldset>
-      <label :for="name" class="checkbox_field relative flex items-center">
+      <label :for="name" class="checkbox_field relative flex items-center cursor-pointer">
         <input type="checkbox" :name="name" :id="name" class="checkbox mr-1.5" :checked="checked" hidden
           @change="store.commit('updateFeatures', props.type)">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 29" fill="none" v-show="checked">
@@ -50,7 +50,7 @@ const checked = computed(() => store.state[store.state.currentSuit][props.type])
   opacity: 0.2;
 }
 
-.checkbox_wrapper.checked {
+.checkbox_wrapper.checked * {
   color: #009A3E;
 }
 
@@ -58,7 +58,7 @@ const checked = computed(() => store.state[store.state.currentSuit][props.type])
   margin-right: 7px;
 }
 
-.checkbox { 
+.checkbox {
   appearance: none;
 }
 </style>

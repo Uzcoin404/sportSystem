@@ -22,7 +22,7 @@ async function submitPhoneNumber() {
   phoneStatus.value.submitting = true;
   try {
     const response = await fetch(import.meta.env.VITE_APP_API_URL, {
-      method: 'POST',
+      method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Basic V2ViRXhjaGFuZ2U6UEBzc3dvcmQwNA==',
